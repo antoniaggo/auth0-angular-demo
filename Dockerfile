@@ -10,5 +10,5 @@ FROM nginx:alpine
 COPY --from=node /app/dist/auth0-angular-demo /usr/share/nginx/html
 COPY ./nginx-custom.conf /etc/nginx/conf.d/default.conf
 
-# docker build -t auth0-angular-demo:v1.0
+# docker build -t auth0-angular-demo:v1.0 .
 # docker run -d -p 80:80 auth0-angular-demo:v1.0
