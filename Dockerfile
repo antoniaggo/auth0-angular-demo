@@ -3,12 +3,11 @@ FROM node:latest as node
 WORKDIR /app
 COPY ./ /app/
 RUN npm install
-RUN npm run start
+# Expose the port the app runs in
+EXPOSE 4200
 
-# Stage 1, based on Nginx, to have only the compiled app, ready for production with Nginx
-# FROM nginx:alpine
-# COPY --from=node /app/dist/auth0-angular-demo /usr/share/nginx/html
-# COPY ./nginx-custom.conf /etc/nginx/conf.d/default.conf
+# Serve the app
+CMD ["npm", "start"]
 
 # docker build -t auth0-angular-demo:v1.0 .
-# docker run -d -p 80:80 auth0-angular-demo:v1.0
+# docker run -d --name auth0-angular-demo:v1.0 -p 80:4200 auth0-angular-demo:v1.0
