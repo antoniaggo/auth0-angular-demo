@@ -1,3 +1,9 @@
+# Serve an Angular app on localhost via HTTPS
+https://blog.fullstacktraining.com/serve-an-angular-app-on-localhost-via-https/
+
+# package.json (npm run start modificado)
+ng serve --ssl true --ssl-cert 'server.crt' --ssl-key 'server.key' --host 0.0.0.0
+
 # Auth0AngularDemo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.2.
